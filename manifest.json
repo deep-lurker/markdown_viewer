@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Markdown Viewer",
+  "version": "1.0.0",
+  "description": "Renders .md files as GitHub-flavored markdown with syntax highlighting",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Open Markdown Viewer"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*/*.md",
+        "file:///*/*.markdown",
+        "*://*/*.md",
+        "*://*/*.markdown"
+      ],
+      "js": [
+        "libs/highlight.min.js",
+        "libs/katex/katex.min.js",
+        "libs/marked.min.js",
+        "libs/katexMarked.js",
+        "content.js"
+      ],
+      "css": [
+        "libs/github-highlight.css",
+        "libs/katex/katex.min.css",
+        "github-markdown.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/katex/fonts/*"
+      ],
+      "matches": [
+        "file:///*",
+        "*://*/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}

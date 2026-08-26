@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Markdown Viewer</title>
+    <link rel="stylesheet" href="libs/github-highlight.css" />
+    <link rel="stylesheet" href="libs/katex/katex.min.css" />
+    <link rel="stylesheet" href="github-markdown.css" />
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <div class="md-app">
+      <header class="md-toolbar">
+        <span class="md-brand">Markdown Viewer</span>
+        <span class="md-filename" id="filename" hidden></span>
+        <span class="md-spacer"></span>
+        <button id="openBtn" class="md-btn" type="button">Open .md file</button>
+        <button id="backBtn" class="md-btn" type="button" hidden>
+          ← Back to landing
+        </button>
+        <input
+          id="fileInput"
+          type="file"
+          accept=".md,.markdown,text/markdown,text/plain"
+          hidden
+        />
+      </header>
+
+      <main class="md-main" id="main">
+        <section class="md-pane md-editor-pane" id="editorPane">
+          <textarea
+            id="editor"
+            class="md-editor"
+            placeholder="Paste or type Markdown here…"
+            spellcheck="false"
+          ></textarea>
+        </section>
+        <section class="md-pane md-preview-pane">
+          <article id="preview" class="markdown-body"></article>
+        </section>
+      </main>
+    </div>
+
+    <script src="libs/highlight.min.js"></script>
+    <script src="libs/katex/katex.min.js"></script>
+    <script src="libs/marked.min.js"></script>
+    <script src="libs/katexMarked.js"></script>
+    <script src="viewer.js"></script>
+  </body>
+</html>
