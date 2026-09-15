@@ -15,6 +15,7 @@
           '<input type="checkbox" disabled' + (checked ? " checked" : "") + "> "
         );
       },
+      code: window.mermaidCodeRenderer,
     },
   });
 
@@ -38,6 +39,7 @@
   function render(text) {
     preview.innerHTML = marked.parse(text || "");
     highlightAll();
+    if (window.renderMermaidBlocks) window.renderMermaidBlocks(preview);
   }
 
   // Landing mode: editable textarea + live preview.

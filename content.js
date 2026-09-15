@@ -33,6 +33,7 @@
           "> "
         );
       },
+      code: window.mermaidCodeRenderer,
     },
   });
 
@@ -86,6 +87,7 @@
       document.querySelectorAll("pre code[class*='language-']").forEach(function (block) {
         hljs.highlightElement(block);
       });
+      if (window.renderMermaidBlocks) window.renderMermaidBlocks(container);
     }
   });
 
@@ -99,4 +101,6 @@
   document.querySelectorAll("pre code:not([class*='language-'])").forEach(function (block) {
     hljs.highlightElement(block);
   });
+
+  if (window.renderMermaidBlocks) window.renderMermaidBlocks(container);
 })();

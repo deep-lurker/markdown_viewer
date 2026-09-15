@@ -38,6 +38,26 @@ def fibonacci(n):
         a, b = b, a + b
 ```
 
+### Mermaid Diagrams
+
+```mermaid
+graph TD
+    A[Start] --> B{Is it a .md file?}
+    B -->|Yes| C[Render Markdown]
+    B -->|No| D[Leave page alone]
+    C --> E[Highlight code]
+    C --> F[Render mermaid]
+```
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant E as Extension
+    U->>E: Open .md file
+    E->>E: Parse with marked
+    E-->>U: Rendered view
+```
+
 ### Inline Code
 
 Use `npm install` to install dependencies, then run `npm start`.

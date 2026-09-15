@@ -25,8 +25,10 @@
       "js": [
         "libs/highlight.min.js",
         "libs/katex/katex.min.js",
+        "libs/mermaid.min.js",
         "libs/marked.min.js",
         "libs/katexMarked.js",
+        "libs/mermaidBlocks.js",
         "content.js"
       ],
       "css": [
